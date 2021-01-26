@@ -283,7 +283,7 @@ if __name__ == "__main__":
     # save confusion matrix and print one line of stats
     stats = confusion_matrix(result_t, result_a, fname + '.txt')
 
-    wandb.log({"fin":stats[0], "bti":stats[1]}, "fti":stats[2])
+    wandb.log({"fin":stats[0], "bti":stats[1], "fti":stats[2]})
 
     one_liner = str(vars(args)) + ' # '
     one_liner += ' '.join(["%.3f" % stat for stat in stats])
