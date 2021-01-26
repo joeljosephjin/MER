@@ -152,9 +152,9 @@ def life_experience(model, continuum, x_te, args):
         model.train()
         model.observe(Variable(v_x), t, Variable(v_y))
 
-        wandb.log({"Task": task_info["task"], "Epoch": ep+1/args.n_epochs, "Iter": i%(1000*args.n_epochs),
+        wandb.log({"Task": t,
             "Total Acc": round(sum(result_val_a[-1]).item()/len(result_val_a[-1]), 5),
-            "Curr Task Acc": round(result_val_a[-1][task_info["task"]].item(), 5)})
+            "Curr Task Acc": round(result_val_a[-1][t].item(), 5)})
 
     result_a.append(eval_tasks(model, x_te, args))
     result_t.append(current_task)
