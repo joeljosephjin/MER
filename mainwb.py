@@ -21,6 +21,7 @@ import numpy as np
 import torch
 from torch.autograd import Variable
 from metrics.metrics import confusion_matrix
+import wandb
 
 # continuum iterator #########################################################
 
